@@ -5,23 +5,16 @@
 #include <Windows.h>
 #include <iostream>
 #include <ctime>
-#include "ConsoleTextStyle.h"
 #include "CSMatrix.h"
+#include "ConsoleTextStyle.h"
+//#include <sstream>
+#include <string>
 using namespace std;
 /*
 1.2.Лабораторная работа №2  Разреженные матрицы
 Задача 8. Даны две разреженные структурно симметричные матрицы. Из одной матрицы вычесть другую и результат занести в разреженную матрицу CCS.
 
 */
-
-
-/*
-TODO:
-	проверить SetVal
-
-	выделить операции setVal в отдельные приватные ф-ции
-*/
-
 
 int ReadConsoleNum(const string Text = "", const int Color = 7);
 double **SimmetricMatrixGenerate(CCSMatrix *InCCSMatrix);//генерация матрицы заданного размера
@@ -51,15 +44,6 @@ int main()
 			AddConsoleTextColor("Генерация...", 14);
 			//создание массивов матриц
 			double **Matrix1 = SimmetricMatrixGenerate(new CCSMatrix(Size, Size));
-			/*double **Matrix1 = new double*[Size];//SimmetricMatrixGenerate(new CCSMatrix(Size, Size));
-			for (int IndMR = 0; IndMR < Size; IndMR++)
-			{
-				Matrix1[IndMR] = new double[Size];
-				for (int IndMC = 0; IndMC < Size; IndMC++)
-				{
-					Matrix1[IndMR][IndMC] = 0.0;
-				}
-			}*/
 			Sleep(1000);
 			double **Matrix2 = SimmetricMatrixGenerate(new CCSMatrix(Size, Size));
 			//вывод матриц
